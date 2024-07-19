@@ -3,132 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LoveWare</title>
+  <title>LoveWare - Modern Design</title>
   <style>
     body {
-      font: 400 1em/1.5 "Neuton";
-      background: #090d00;
-      color: rgba(255, 255, 255, .25);
-      text-align: center;
+      font: 400 1em/1.5 "Neuton", sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
       margin: 0;
+      padding: 0;
       overflow-x: hidden;
     }
 
-    p {
-      text-transform: uppercase;
-      letter-spacing: .5em;
-      display: inline-block;
-      border: 4px double rgba(255, 255, 255, .25);
-      border-width: 4px 0;
-      padding: 1.5em 0;
-      position: relative;
-      top: 18%;
-      left: 50%;
-      width: 40em;
-      margin: 0 0 0 -20em;
-    }
-
-    span {
-      font: 700 4em/1 "Oswald", sans-serif;
-      letter-spacing: 0;
-      padding: .25em 0 .325em;
-      display: block;
-      margin: 0 auto;
-      text-shadow: 0 0 80px rgba(255, 255, 255, .5);
-      background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-animation: aitf 80s linear infinite;
-      -webkit-transform: translate3d(0,0,0);
-      -webkit-backface-visibility: hidden;
-    }
-
-    @-webkit-keyframes aitf {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    /* Parallax Section */
-    .parallax {
-      position: relative;
+    .hero {
       height: 100vh;
-      background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat fixed center;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?space') no-repeat center center;
       background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+    .hero h1 {
+      font-size: 4em;
       color: #fff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      color: #ccc;
+      margin-top: 0.5em;
     }
 
     .buttons {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
+      justify-content: center;
       gap: 1em;
+      margin-top: 2em;
     }
 
     .button {
-      background: #fff;
-      color: #090d00;
+      background: #f5f5f5;
+      color: #0a0a0a;
       border: none;
-      padding: 0.5em 1em;
-      font: 400 1em/1.5 "Neuton";
+      padding: 1em 2em;
+      font-size: 1em;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      cursor: pointer;
       border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: #0a0a0a;
+      transition: all 0.4s ease;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      z-index: 0;
+    }
+
+    .button:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.3;
     }
 
     .button:hover {
-      background: #090d00;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 4em 2em;
+      background: #1a1a1a;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      color: #f5f5f5;
+      margin-bottom: 1em;
+    }
+
+    .section p {
+      font-size: 1.2em;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Modern effects */
+    .card {
+      background: #333;
+      border-radius: 10px;
+      padding: 2em;
+      margin: 1em auto;
+      max-width: 300px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card h3 {
+      margin-top: 0;
       color: #fff;
     }
 
-    /* Old Movie Text */
-    .movie-text {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 1em;
-      font: 400 1.2em/1.5 "Neuton";
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      letter-spacing: 0.2em;
+    .card p {
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <p>
-    Presenting...
-    <span>LOVEWARE</span>
-    &mdash; Supported Executers: Delta x, Solara, Trigon, Other exec like Celery &mdash;
-  </p>
-
-  <div class="parallax">
-    <div class="content">
-      <p>Scroll Down for More</p>
+  <header class="hero">
+    <div>
+      <h1>Welcome to LoveWare</h1>
+      <p>Innovative Solutions for Modern Needs</p>
+      <div class="buttons">
+        <button class="button">Learn More</button>
+        <button class="button">Get Started</button>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="buttons">
-    <button class="button">About</button>
-    <button class="button">Contact</button>
-    <button class="button">More Info</button>
-  </div>
-
-  <div class="movie-text">
-    This is a tribute to old movie designs with a modern twist.
-  </div>
+  <section class="section">
+    <h2>Our Services</h2>
+    <p>We provide cutting-edge solutions tailored to your needs. Our services include custom software development, consulting, and support to help you achieve your goals efficiently.</p>
+    <div class="card">
+      <h3>Service One</h3>
+      <p>Detail about service one, explaining its features and benefits.</p>
+    </div>
+    <div class="card">
+      <h3>Service Two</h3>
+      <p>Detail about service two, explaining its features and benefits.</p>
+    </div>
+  </section>
 </body>
 </html>
