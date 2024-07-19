@@ -58,6 +58,9 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
+      text-decoration: none; /* Remove underline */
+      display: inline-block; /* Ensure proper button layout */
+      text-align: center;
     }
 
     .button::before {
@@ -133,25 +136,25 @@
 <body>
   <header class="hero">
     <div>
-      <h1>Loveware</h1>
+      <h1>LoveWare</h1>
       <p>For Roblox Exploiters</p>
       <div class="buttons">
-        <button class="button">Download</button>
-        <button class="button">Discord</button>
+        <a href="https://lovewarefr.github.io/ExploitWare" class="button">Get Exploitin'</a>
+        <a href="https://discord.gg/D9B4BNsx6S" class="button">Discord</a>
       </div>
     </div>
   </header>
 
   <section class="section">
     <h2>Info</h2>
-    <p>We provide Nice and cool exploiting experience</p>
+    <p>We provide a nice and cool exploiting experience.</p>
     <div class="card">
       <h3>Our Goal</h3>
-      <p>We want your exploiting experience to be Cool</p>
+      <p>We want your exploiting experience to be cool.</p>
     </div>
     <div class="card">
       <h3>Apply for Mod/Admin/Script Dev</h3>
-      <p>You can apply at .gg/bD5uv9VrVU</p>
+      <p>You can apply at <a href="https://discord.gg/bD5uv9VrVU" target="_blank">this link</a>.</p>
     </div>
   </section>
 </body>
